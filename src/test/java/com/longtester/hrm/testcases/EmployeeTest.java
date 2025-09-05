@@ -33,19 +33,23 @@ public class EmployeeTest extends BaseTest {
         basePage.clickMenuPIM();
         employeePage.verifyEmployeeIsDisplayedInTable(id);
     }
-    @Test
-    public void testMainFlow(){
-        loginPage.loginHRM(DataTest.username_login,DataTest.password_login);
+    @Test(dataProvider = "E2E", dataProviderClass = DataProviderFactory.class)
+    public void testMainFlow(String login_username, String login_password,
+                             String firstname, String middlename, String lastname,
+                             String id, String drivernumber, String gender,
+                             String jobtitle, String jobcategory){
+        loginPage.loginHRM(login_username,login_password);
         basePage.clickMenuPIM();
-        employeePage.addNewEmployee(DataTest.employee_firstname,DataTest.employee_middlename,DataTest.employee_lastname,DataTest.employee_id);
+        employeePage.addNewEmployee(firstname,middlename,lastname,id);
         basePage.clickMenuPIM();
-        employeePage.verifyEmployeeIsDisplayedInTable(DataTest.employee_id);
+        employeePage.verifyEmployeeIsDisplayedInTable(id);
         employeePage.clickEdit();
-        employeeDetailPage.updatePersonalDetail(DataTest.driverNumber,DataTest.gender);
-        employeeDetailPage.updateJob(DataTest.job_title,DataTest.job_category);
+        employeeDetailPage.updatePersonalDetail(drivernumber,gender);
+        employeeDetailPage.updateJob(jobtitle,jobcategory);
         employeeDetailPage.clickMenuPersonalDetail();
-        employeeDetailPage.verifyPersonalDetailUpdated(DataTest.driverNumber,DataTest.gender);
+        employeeDetailPage.verifyPersonalDetailUpdated(drivernumber,gender);
         employeeDetailPage.clickMenuJob();
-        employeeDetailPage.verifyJobUpdated(DataTest.job_title,DataTest.job_category);
+        employeeDetailPage.verifyJobUpdated(jobtitle,jobcategory);
+
     }
 }

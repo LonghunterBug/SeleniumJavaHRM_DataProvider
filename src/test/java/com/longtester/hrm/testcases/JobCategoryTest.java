@@ -2,6 +2,7 @@ package com.longtester.hrm.testcases;
 
 import com.longtester.hrm.common.BaseTest;
 import com.longtester.hrm.common.DataTest;
+import com.longtester.hrm.dataproviders.DataProviderFactory;
 import com.longtester.hrm.pages.BasePage;
 import com.longtester.hrm.pages.JobCategoryPage;
 import com.longtester.hrm.pages.LoginPage;
@@ -19,13 +20,13 @@ public class JobCategoryTest extends BaseTest {
         basePage = new BasePage();
         jobCategoryPage = new JobCategoryPage();
     }
-    @Test(priority = 1)
-    public void testAddJobCategory() {
-        loginPage.loginHRM("Admin", "admin123");
+    @Test(priority = 1,dataProvider = "addJobCategoryData",dataProviderClass = DataProviderFactory.class)
+    public void testAddJobCategory(String username, String password, String jobcategory) {
+        loginPage.loginHRM(username, password);
         basePage.clickMenuAdmin();
-        jobCategoryPage.addJobCategory(DataTest.job_category);
+        jobCategoryPage.addJobCategory(jobcategory);
         basePage.verifySuccessMessageIsDisplayed();
-        jobCategoryPage.verifyJobCategoryIsDisplayedInTable(DataTest.job_category);
+        jobCategoryPage.verifyJobCategoryIsDisplayedInTable(jobcategory);
     }
     @Test(priority = 2)
     public void testEditJobCategory() {

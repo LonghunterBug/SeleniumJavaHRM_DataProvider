@@ -91,7 +91,7 @@ public class JobCategoryPage {
         List<WebElement> e = WebUI.getWebElements(listJobCategory);
         for (WebElement element : e) {
             if (element.getText().equals(category)) {
-                WebUI.scrollToElementAtTop(element);
+                WebUI.hoverMouse(element);
                 WebUI.highlightElement(element);
                 WebUI.sleep(2); // Nếu quay video thì cần sleep
                 WebUI.verifyDisplay(element,element.isDisplayed(), category + " is not displayed in the table.");

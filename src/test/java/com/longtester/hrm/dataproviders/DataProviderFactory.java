@@ -64,6 +64,21 @@ public class DataProviderFactory {
         }
         return result;
     }
+    // Data for Job Category
+    @DataProvider(name = "addJobCategoryData")
+    public Object[][] addJobCategoryData() {
+        ExcelHelper excel = new ExcelHelper();
+        Object[][] loginData = excel.getExcelData("src/test/resources/testdata/HRM.xlsx", "Login", "TC01");
+        Object[][] jobCategoryData = excel.getExcelData("src/test/resources/testdata/HRM.xlsx", "Job Category");
+
+        Object[][] result = new Object[jobCategoryData.length][3];
+        for (int i = 0; i < jobCategoryData.length; i++) {
+            result[i][0] = loginData[0][0]; // username
+            result[i][1] = loginData[0][1]; // password
+            result[i][2] = jobCategoryData[i][0]; // job category
+        }
+        return result;
+    }
     // Data for User Management
     @DataProvider(name = "addUser")
     public Object[][] addNewUser(){
@@ -118,5 +133,11 @@ public class DataProviderFactory {
             result[i][5] = employeeData[i][3]; // ID
         }
         return result;
+    }
+    @DataProvider(name = "E2E")
+    public Object[][] E2Eflow(){
+        ExcelHelper excel = new ExcelHelper();
+        Object[][] E2EData = excel.getExcelData("src/test/resources/testdata/HRM.xlsx","E2E");
+        return E2EData;
     }
 }

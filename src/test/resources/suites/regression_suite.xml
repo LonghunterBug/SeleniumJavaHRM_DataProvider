@@ -2,28 +2,33 @@
 <suite name="HRMSuite" verbose="1">
     <test name="Job Title Module">
         <classes>
-            <class name="com.longtester.hrm.testcases.JobTitleTest"/>
+            <class name="com.longtester.hrm.testcases.JobTitleTest">
+                <methods>
+                    <include name="testAddJobTitle"/>
+                </methods>
+            </class>
+
         </classes>
     </test>
-<!--    <test name="Job Category Module">-->
-<!--        <classes>-->
-<!--            <class name="com.longtester.hrm.testcases.JobCategoryTest">-->
-<!--                <methods>-->
-<!--                    <include name="testAddJobCategory"/>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="Employee Module">-->
-<!--        <classes>-->
-<!--            <class name="com.longtester.hrm.testcases.EmployeeTest">-->
-<!--                <methods>-->
-<!--                    <include name="testMainFlow"/>-->
-<!--                </methods>-->
-<!--            </class>-->
+    <test name="Job Category Module">
+        <classes>
+            <class name="com.longtester.hrm.testcases.JobCategoryTest">
+                <methods>
+                    <include name="testAddJobCategory"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Employee Module">
+        <classes>
+            <class name="com.longtester.hrm.testcases.EmployeeTest">
+                <methods>
+                    <include name="testMainFlow"/>
+                </methods>
+            </class>
 
-<!--        </classes>-->
-<!--    </test>-->
+        </classes>
+    </test>
 <!--    <test name="Location Module">-->
 <!--        <classes>-->
 <!--            <class name="com.longtester.hrm.testcases.LocationTest"></class>-->
