@@ -1,5 +1,6 @@
 package com.longtester.hrm.testcases;
 
+import com.longtester.helpers.CaptureHelper;
 import com.longtester.hrm.common.BaseTest;
 import com.longtester.hrm.common.DataTest;
 import com.longtester.hrm.dataproviders.DataProviderFactory;
@@ -39,6 +40,7 @@ public class EmployeeTest extends BaseTest {
                              String id, String drivernumber, String gender,
                              String jobtitle, String jobcategory){
         loginPage.loginHRM(login_username,login_password);
+        CaptureHelper.startRecord("E2E");
         basePage.clickMenuPIM();
         employeePage.addNewEmployee(firstname,middlename,lastname,id);
         basePage.clickMenuPIM();
@@ -50,6 +52,7 @@ public class EmployeeTest extends BaseTest {
         employeeDetailPage.verifyPersonalDetailUpdated(drivernumber,gender);
         employeeDetailPage.clickMenuJob();
         employeeDetailPage.verifyJobUpdated(jobtitle,jobcategory);
+        CaptureHelper.stopRecord();
 
     }
 }

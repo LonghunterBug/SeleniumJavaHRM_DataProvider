@@ -1,5 +1,6 @@
 package com.longtester.hrm.testcases;
 
+import com.longtester.helpers.CaptureHelper;
 import com.longtester.hrm.common.BaseTest;
 import com.longtester.hrm.dataproviders.DataProviderFactory;
 import com.longtester.hrm.pages.BasePage;
@@ -27,6 +28,7 @@ public class LoginTest extends BaseTest {
     public void testLoginFailWithInvalidCredential(String username, String password){
         loginPage.loginHRM(username,password);
         loginPage.verifyErrorInvalidCredentialDisplayed();
+        CaptureHelper.takeFullScreenshot("loginFail");
     }
     @Test(dataProvider = "data_provider_loginfail1",dataProviderClass = DataProviderFactory.class)
     public void testLoginFailWithoutInputRequired(String username, String password){

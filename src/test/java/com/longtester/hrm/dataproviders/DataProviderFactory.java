@@ -69,7 +69,7 @@ public class DataProviderFactory {
     public Object[][] addJobCategoryData() {
         ExcelHelper excel = new ExcelHelper();
         Object[][] loginData = excel.getExcelData("src/test/resources/testdata/HRM.xlsx", "Login", "TC01");
-        Object[][] jobCategoryData = excel.getExcelData("src/test/resources/testdata/HRM.xlsx", "Job Category");
+        Object[][] jobCategoryData = excel.getExcelData("src/test/resources/testdata/HRM.xlsx", "Job Category","TC03");
 
         Object[][] result = new Object[jobCategoryData.length][3];
         for (int i = 0; i < jobCategoryData.length; i++) {
@@ -137,7 +137,7 @@ public class DataProviderFactory {
     @DataProvider(name = "E2E")
     public Object[][] E2Eflow(){
         ExcelHelper excel = new ExcelHelper();
-        Object[][] E2EData = excel.getExcelData("src/test/resources/testdata/HRM.xlsx","E2E");
+        Object[][] E2EData = excel.getExcelData("src/test/resources/testdata/HRM.xlsx","E2E","TC03");
         return E2EData;
     }
 }

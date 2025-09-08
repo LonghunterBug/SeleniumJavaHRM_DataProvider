@@ -1,5 +1,6 @@
 package com.longtester.hrm.testcases;
 
+import com.longtester.helpers.CaptureHelper;
 import com.longtester.hrm.common.BaseTest;
 import com.longtester.hrm.common.DataTest;
 import com.longtester.hrm.dataproviders.DataProviderFactory;
@@ -33,6 +34,7 @@ public class JobTitleTest extends BaseTest {
         jobTitlePage.addJobTitle(jobtitle);
         basePage.verifySuccessMessageIsDisplayed();
         jobTitlePage.verifyJobTitleIsDisplayedInTable(jobtitle);
+        CaptureHelper.takeScreenshotBrowser("addJobTitle");
     }
     @Test(priority = 2,dataProvider = "editJobTitleData",dataProviderClass = DataProviderFactory.class)
     public void testEditJobTitle(String username, String password, String jobtitle, String jobtitleupdated) {

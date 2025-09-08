@@ -100,15 +100,19 @@ public class EmployeeDetailPage {
     }
 
     public void verifyPersonalDetailUpdated(String driverNumber, String gender) {
-        WebUI.sleep(1);
+        WebUI.sleep(2);
         String actual_valueLicenseNumber = WebUI.getElementAttribute(inputDriverLicenseNumber, "value");
+        WebUI.highlightElement(inputDriverLicenseNumber);
         boolean check = WebUI.isElementSelected(By.xpath("//label[text()='" + gender + "']/input[@type='radio']"));
+        WebUI.highlightElement(By.xpath("//label[text()='" + gender + "']"));
         WebUI.verifyEqual(actual_valueLicenseNumber, driverNumber, "Driver License Number not updated");
         WebUI.verifySelect(By.xpath("//label[text()='" + gender + "']"), check, "Gender not checked");
     }
     public void verifyJobUpdated(String jobTitle, String jobCategory){
-        WebUI.sleep(1);
+        WebUI.sleep(2);
         String actual_jobTitle = WebUI.getElementText(selectJobTitle);
+        WebUI.highlightElement(selectJobTitle);
+        WebUI.highlightElement(selectJobCategory);
         String actual_jobCategory = WebUI.getElementText(selectJobCategory);
         WebUI.verifyEqual(actual_jobTitle,jobTitle,"Job title not matched");
         WebUI.verifyEqual(actual_jobCategory,jobCategory,"Job category not matched");
