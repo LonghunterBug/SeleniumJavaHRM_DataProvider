@@ -1,6 +1,7 @@
 package com.longtester.keywords;
 
 import com.longtester.driver.DriverManager;
+import com.longtester.helpers.PropertiesHelper;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -15,8 +16,8 @@ import java.util.List;
 public class WebUI {
     private static WebDriver driver;
 
-    private static int TIMEOUT = 20;
-    private static double STEP_TIME = 0.5;
+    private static int TIMEOUT = Integer.parseInt(PropertiesHelper.getValue("WAIT_EXPLICIT"));
+    private static double STEP_TIME = Double.parseDouble(PropertiesHelper.getValue("SLEEP_TIME"));
     private static int PAGE_LOAD_TIMEOUT = 30;
 
 

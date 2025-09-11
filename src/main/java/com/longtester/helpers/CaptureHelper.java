@@ -50,7 +50,7 @@ public class CaptureHelper extends ScreenRecorder {
     // Start record video
     public static void startRecord(String methodName) {
         //Tạo thư mục để lưu file video vào
-        File file = new File("./exports/video");
+        File file = new File(SystemHelper.getCurrentDir() + PropertiesHelper.getValue("EXPORT_VIDEO_PATH"));
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int width = screenSize.width;
         int height = screenSize.height;
@@ -84,14 +84,14 @@ public class CaptureHelper extends ScreenRecorder {
             // Gọi hàm getScreenshotAs để chuyển hóa hình ảnh về dạng FILE
             File source = ts.getScreenshotAs(OutputType.FILE);
             //Kiểm tra folder nếu không tồn tại thì tạo folder
-            File theDir = new File("./exports/screenshot");
+            File theDir = new File(SystemHelper.getCurrentDir() + PropertiesHelper.getValue("EXPORT_CAPTURE_PATH"));
             if (!theDir.exists()) {
                 theDir.mkdirs();
             }
             // Chổ này đặt tên thì truyền biến "screenName" gán cho tên File chụp màn hình
-            FileHandler.copy(source, new File("./exports/screenshot" + File.separator + screenshotName + "_" + dateFormat.format(new Date()) + ".png"));
-            System.out.println("Screenshot taken: " + screenshotName);
-            System.out.println("Screenshot taken current URL: " + DriverManager.getDriver().getCurrentUrl());
+            FileHandler.copy(source, new File(SystemHelper.getCurrentDir() + PropertiesHelper.getValue("EXPORT_CAPTURE_PATH") + File.separator + screenshotName + "_" + dateFormat.format(new Date()) + ".png"));
+//            System.out.println("Screenshot taken: " + screenshotName);
+//            System.out.println("Screenshot taken current URL: " + DriverManager.getDriver().getCurrentUrl());
         } catch (Exception e) {
             System.out.println("Exception while taking screenshot: " + e.getMessage());
         }
@@ -103,14 +103,14 @@ public class CaptureHelper extends ScreenRecorder {
             Rectangle screenRect = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
             BufferedImage screenFullImage = robot.createScreenCapture(screenRect);
 
-            File theDir = new File("./exports/screenshot");
+            File theDir = new File(SystemHelper.getCurrentDir() + PropertiesHelper.getValue("EXPORT_CAPTURE_PATH"));
             if (!theDir.exists()) {
                 theDir.mkdirs();
             }
             // Lưu file
-            ImageIO.write(screenFullImage, "png", new File("./exports/screenshot" + File.separator + screenshotName + "_" + dateFormat.format(new Date()) + ".png"));
-            System.out.println("Screenshot taken: " + screenshotName);
-            System.out.println("Screenshot taken current URL: " + DriverManager.getDriver().getCurrentUrl());
+            ImageIO.write(screenFullImage, "png", new File(SystemHelper.getCurrentDir() + PropertiesHelper.getValue("EXPORT_CAPTURE_PATH") + File.separator + screenshotName + "_" + dateFormat.format(new Date()) + ".png"));
+//            System.out.println("Screenshot taken: " + screenshotName);
+//            System.out.println("Screenshot taken current URL: " + DriverManager.getDriver().getCurrentUrl());
         } catch (Exception e) {
             System.out.println("Exception while taking screenshot: " + e.getMessage());
         }

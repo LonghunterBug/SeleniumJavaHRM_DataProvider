@@ -21,27 +21,29 @@ public class JobCategoryTest extends BaseTest {
         jobCategoryPage = new JobCategoryPage();
     }
     @Test(priority = 1,dataProvider = "addJobCategoryData",dataProviderClass = DataProviderFactory.class)
-    public void testAddJobCategory(String username, String password, String jobcategory) {
+    public void testAddJobCategory(String username, String password, String category) {
         loginPage.loginHRM(username, password);
         basePage.clickMenuAdmin();
-        jobCategoryPage.addJobCategory(jobcategory);
+        jobCategoryPage.addJobCategory(category);
         basePage.verifySuccessMessageIsDisplayed();
-        jobCategoryPage.verifyJobCategoryIsDisplayedInTable(jobcategory);
+        jobCategoryPage.verifyJobCategoryIsDisplayedInTable(category);
     }
-    @Test(priority = 2)
-    public void testEditJobCategory() {
-        loginPage.loginHRM("Admin", "admin123");
+    @Test(priority = 2,dataProvider = "editJobCategoryData",dataProviderClass = DataProviderFactory.class)
+    public void testEditJobCategory(String username, String password, String category, String categoryupdated) {
+        loginPage.loginHRM(username, password);
         basePage.clickMenuAdmin();
-        jobCategoryPage.editJobCategory(DataTest.job_category);
+        jobCategoryPage.addJobCategory(category);
+        jobCategoryPage.editJobCategory(category,categoryupdated);
         basePage.verifySuccessMessageIsDisplayed();
-        jobCategoryPage.verifyJobCategoryIsDisplayedInTable(DataTest.job_category_edit);
+        jobCategoryPage.verifyJobCategoryIsDisplayedInTable(categoryupdated);
     }
-    @Test(priority = 3)
-    public void testDeleteJobCategory(){
-        loginPage.loginHRM("Admin", "admin123");
+    @Test(priority = 3,dataProvider = "deleteJobCategoryData",dataProviderClass = DataProviderFactory.class)
+    public void testDeleteJobCategory(String username, String password, String category){
+        loginPage.loginHRM(username, password);
         basePage.clickMenuAdmin();
-        jobCategoryPage.deleteJobCategory(DataTest.job_category_edit);
+        jobCategoryPage.addJobCategory(category);
+        jobCategoryPage.deleteJobCategory(category);
         basePage.verifySuccessMessageIsDisplayed();
-        jobCategoryPage.verifyJobCategoryNotDisplayedInTable(DataTest.job_category_edit);
+        jobCategoryPage.verifyJobCategoryNotDisplayedInTable(category);
     }
 }

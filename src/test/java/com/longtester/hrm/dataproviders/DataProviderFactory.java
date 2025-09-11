@@ -69,7 +69,7 @@ public class DataProviderFactory {
     public Object[][] addJobCategoryData() {
         ExcelHelper excel = new ExcelHelper();
         Object[][] loginData = excel.getExcelData("src/test/resources/testdata/HRM.xlsx", "Login", "TC01");
-        Object[][] jobCategoryData = excel.getExcelData("src/test/resources/testdata/HRM.xlsx", "Job Category","TC03");
+        Object[][] jobCategoryData = excel.getExcelData("src/test/resources/testdata/HRM.xlsx", "Job Category","TC01");
 
         Object[][] result = new Object[jobCategoryData.length][3];
         for (int i = 0; i < jobCategoryData.length; i++) {
@@ -79,6 +79,34 @@ public class DataProviderFactory {
         }
         return result;
     }
+    @DataProvider(name = "editJobCategoryData")
+    public Object[][] editJobCategoryData(){
+        ExcelHelper excel = new ExcelHelper();
+        Object[][] loginData = excel.getExcelData("src/test/resources/testdata/HRM.xlsx", "Login", "TC01");
+        Object[][] jobCategoryData = excel.getExcelData("src/test/resources/testdata/HRM.xlsx", "Job Category", "TC02");
+        Object[][] result = new Object[jobCategoryData.length][4];
+        for (int i = 0; i < jobCategoryData.length; i++) {
+            result[i][0] = loginData[0][0]; // username
+            result[i][1] = loginData[0][1]; // password
+            result[i][2] = jobCategoryData[i][0]; // job category
+            result[i][3] = jobCategoryData[i][1]; // job category updated
+        }
+        return result;
+    }
+    @DataProvider(name = "deleteJobCategoryData")
+    public Object[][] deleteJobCategoryData(){
+        ExcelHelper excel = new ExcelHelper();
+        Object[][] loginData = excel.getExcelData("src/test/resources/testdata/HRM.xlsx", "Login", "TC01");
+        Object[][] jobCategoryData = excel.getExcelData("src/test/resources/testdata/HRM.xlsx", "Job Category", "TC03");
+        Object[][] result = new Object[jobCategoryData.length][3];
+        for (int i = 0; i < jobCategoryData.length; i++) {
+            result[i][0] = loginData[0][0]; // username
+            result[i][1] = loginData[0][1]; // password
+            result[i][2] = jobCategoryData[i][0]; // job category
+        }
+        return result;
+    }
+
     // Data for User Management
     @DataProvider(name = "addUser")
     public Object[][] addNewUser(){

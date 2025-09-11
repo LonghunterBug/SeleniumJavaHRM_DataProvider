@@ -25,13 +25,12 @@ public class LoginTest extends BaseTest {
         basePage.verifyMainMenuDisplayed();
     }
     @Test(dataProvider = "data_provider_loginfail",dataProviderClass = DataProviderFactory.class)
-    public void testLoginFailWithInvalidCredential(String username, String password){
+    public void testLoginFailWithInvalidCredential(String username,String password){
         loginPage.loginHRM(username,password);
         loginPage.verifyErrorInvalidCredentialDisplayed();
-        CaptureHelper.takeFullScreenshot("loginFail");
     }
     @Test(dataProvider = "data_provider_loginfail1",dataProviderClass = DataProviderFactory.class)
-    public void testLoginFailWithoutInputRequired(String username, String password){
+    public void testLoginFailWithoutInputRequired(String username,String password){
         loginPage.loginHRM(username,password);
         loginPage.verifyErrorInputRequirDisplayed();
     }

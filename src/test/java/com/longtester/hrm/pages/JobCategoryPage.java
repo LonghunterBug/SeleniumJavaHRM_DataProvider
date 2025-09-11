@@ -34,7 +34,7 @@ public class JobCategoryPage {
         WebUI.setText(inputJobCategory, jobCategory);
         WebUI.clickElement(buttonSave);
     }
-    public void editJobCategory(String category) {
+    public void editJobCategory(String category,String categoryupdated) {
         clickMenuJobCategory();
         int index = 0;
         WebUI.sleep(3);
@@ -42,7 +42,7 @@ public class JobCategoryPage {
         List<WebElement> jobcategory = WebUI.getWebElements(listJobCategory);
         for (int i = 0; i < jobcategory.size(); i++) {
             if (jobcategory.get(i).getText().equals(category)) {
-                WebUI.scrollToElementAtTop(jobcategory,i);
+                WebUI.hoverMouse(jobcategory,i);
                 check = true;
                 index = i;
                 WebUI.logConsole("Index of job category: " + i);// Adjust index for the button position
@@ -57,7 +57,7 @@ public class JobCategoryPage {
         WebUI.highlightElement(listButtonEdit,index);
         listButtonEdit.get(index).click();
         WebUI.clearTextWithKey(inputJobCategory);
-        WebUI.setText(inputJobCategory, DataTest.job_category_edit);
+        WebUI.setText(inputJobCategory,categoryupdated);
         WebUI.clickElement(buttonSave);
     }
     public void deleteJobCategory(String category) {
@@ -68,7 +68,7 @@ public class JobCategoryPage {
         List<WebElement> jobcategory = WebUI.getWebElements(listJobCategory);
         for (int i = 0; i < jobcategory.size(); i++) {
             if (jobcategory.get(i).getText().equals(category)) {
-                WebUI.scrollToElementAtTop(jobcategory,i);
+                WebUI.hoverMouse(jobcategory,i);
                 check = true;
                 index = i;
                 WebUI.logConsole("Index of job category: " + i);// Adjust index for the button position

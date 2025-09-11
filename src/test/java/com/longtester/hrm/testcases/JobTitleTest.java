@@ -34,7 +34,6 @@ public class JobTitleTest extends BaseTest {
         jobTitlePage.addJobTitle(jobtitle);
         basePage.verifySuccessMessageIsDisplayed();
         jobTitlePage.verifyJobTitleIsDisplayedInTable(jobtitle);
-        CaptureHelper.takeScreenshotBrowser("addJobTitle");
     }
     @Test(priority = 2,dataProvider = "editJobTitleData",dataProviderClass = DataProviderFactory.class)
     public void testEditJobTitle(String username, String password, String jobtitle, String jobtitleupdated) {
