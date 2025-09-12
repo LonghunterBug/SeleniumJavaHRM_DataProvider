@@ -1,0 +1,114 @@
+[INFO] 12-09-2025 15:56:14 [main] LogUtils - ********** RUN STARTED **********
+[INFO] 12-09-2025 15:56:16 [main] LogUtils - Test case: testLoginFailWithInvalidCredential is starting...
+[INFO] 12-09-2025 15:56:21 [main] LogUtils - 🌐 Open URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+[INFO] 12-09-2025 15:56:21 [main] LogUtils - Set text Admin on element By.xpath: //input[@placeholder='Username']
+[INFO] 12-09-2025 15:56:22 [main] LogUtils - Set text 123 on element By.xpath: //input[@placeholder='Password']
+[INFO] 12-09-2025 15:56:23 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 12-09-2025 15:56:26 [main] LogUtils - Verify Invalid credentials is displayed
+[INFO] 12-09-2025 15:56:26 [main] LogUtils - Get text of element By.xpath: //p[normalize-space()='Invalid credentials']
+[INFO] 12-09-2025 15:56:26 [main] LogUtils - ==> TEXT: Invalid credentials
+[INFO] 12-09-2025 15:56:26 [main] LogUtils - Verify equal: Invalid credentials and Invalid credentials
+[INFO] 12-09-2025 15:56:26 [main] LogUtils - ✅ Test case: testLoginFailWithInvalidCredential is passed.
+[INFO] 12-09-2025 15:56:27 [main] LogUtils - Test case: testLoginFailWithoutInputRequired is starting...
+[INFO] 12-09-2025 15:56:32 [main] LogUtils - 🌐 Open URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+[INFO] 12-09-2025 15:56:32 [main] LogUtils - Set text long on element By.xpath: //input[@placeholder='Username']
+[INFO] 12-09-2025 15:56:33 [main] LogUtils - Set text long on element By.xpath: //input[@placeholder='Password']
+[INFO] 12-09-2025 15:56:34 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 12-09-2025 15:56:54 [main] LogUtils - Timeout waiting for the element Visible. By.xpath: //span[contains(@class,'input-field-error-message')]
+[ERROR] 12-09-2025 15:56:54 [main] LogUtils - ❌ Test case: testLoginFailWithoutInputRequired is failed.
+[ERROR] 12-09-2025 15:56:54 [main] LogUtils - java.lang.AssertionError: Timeout waiting for the element Visible. By.xpath: //span[contains(@class,'input-field-error-message')]
+[INFO] 12-09-2025 15:56:55 [main] LogUtils - Test case: testLoginSuccess is starting...
+[INFO] 12-09-2025 15:56:58 [main] LogUtils - 🌐 Open URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+[INFO] 12-09-2025 15:57:00 [main] LogUtils - Set text Admin on element By.xpath: //input[@placeholder='Username']
+[INFO] 12-09-2025 15:57:01 [main] LogUtils - Set text admin123 on element By.xpath: //input[@placeholder='Password']
+[INFO] 12-09-2025 15:57:01 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 12-09-2025 15:57:05 [main] LogUtils - Verify Admin is displayed
+[INFO] 12-09-2025 15:57:05 [main] LogUtils - Verify PIM is displayed
+[INFO] 12-09-2025 15:57:05 [main] LogUtils - Verify Leave is displayed
+[INFO] 12-09-2025 15:57:05 [main] LogUtils - Verify Time is displayed
+[INFO] 12-09-2025 15:57:06 [main] LogUtils - Verify Recruitment is displayed
+[INFO] 12-09-2025 15:57:06 [main] LogUtils - Verify My Info is displayed
+[INFO] 12-09-2025 15:57:06 [main] LogUtils - Verify Performance is displayed
+[INFO] 12-09-2025 15:57:06 [main] LogUtils - Verify Dashboard is displayed
+[INFO] 12-09-2025 15:57:06 [main] LogUtils - Verify Directory is displayed
+[INFO] 12-09-2025 15:57:06 [main] LogUtils - Verify Maintenance is displayed
+[INFO] 12-09-2025 15:57:06 [main] LogUtils - Verify Claim is displayed
+[INFO] 12-09-2025 15:57:06 [main] LogUtils - Verify Buzz is displayed
+[INFO] 12-09-2025 15:57:06 [main] LogUtils - ✅ Test case: testLoginSuccess is passed.
+[INFO] 12-09-2025 15:57:06 [main] LogUtils - ********** RUN FINISHED **********
+[INFO] 12-09-2025 15:57:06 [main] LogUtils - Total TCs: 3
+[INFO] 12-09-2025 15:57:06 [main] LogUtils - Passed TCs: 2
+[INFO] 12-09-2025 15:57:06 [main] LogUtils - Failed TCs: 1
+[INFO] 12-09-2025 15:57:06 [main] LogUtils - Skipped TCs: 0
+[INFO] 12-09-2025 16:17:52 [main] LogUtils - ********** RUN STARTED **********
+[INFO] 12-09-2025 16:17:54 [main] LogUtils - Test case: testAddJobTitle is starting...
+[INFO] 12-09-2025 16:17:58 [main] LogUtils - 🌐 Open URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+[INFO] 12-09-2025 16:17:59 [main] LogUtils - Set text Admin on element By.xpath: //input[@placeholder='Username']
+[INFO] 12-09-2025 16:18:00 [main] LogUtils - Set text admin123 on element By.xpath: //input[@placeholder='Password']
+[INFO] 12-09-2025 16:18:00 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 12-09-2025 16:18:03 [main] LogUtils - Click on element By.xpath: //span[normalize-space()='Admin']
+[INFO] 12-09-2025 16:18:05 [main] LogUtils - Click on element By.xpath: //span[contains(@class,'topbar') and normalize-space()='Job']
+[INFO] 12-09-2025 16:18:06 [main] LogUtils - Click on element By.xpath: //a[contains(@class,'tab-link') and normalize-space()='Job Titles']
+[INFO] 12-09-2025 16:18:08 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Add']
+[INFO] 12-09-2025 16:18:09 [main] LogUtils - Set text QA Engineer 6 on element By.xpath: //label[text()='Job Title']/parent::div/following-sibling::div/input
+[INFO] 12-09-2025 16:18:10 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Save']
+[INFO] 12-09-2025 16:18:11 [main] LogUtils - Verify Success
+Successfully Saved
+× is displayed
+[INFO] 12-09-2025 16:18:17 [main] LogUtils - Hover mouse on element QA Engineer 6
+[INFO] 12-09-2025 16:18:19 [main] LogUtils - Verify QA Engineer 6 is displayed
+[INFO] 12-09-2025 16:18:19 [main] LogUtils - ✅ Test case: testAddJobTitle is passed.
+[INFO] 12-09-2025 16:18:21 [main] LogUtils - Test case: testEditJobTitle is starting...
+[INFO] 12-09-2025 16:18:24 [main] LogUtils - 🌐 Open URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+[INFO] 12-09-2025 16:18:25 [main] LogUtils - Set text Admin on element By.xpath: //input[@placeholder='Username']
+[INFO] 12-09-2025 16:18:26 [main] LogUtils - Set text admin123 on element By.xpath: //input[@placeholder='Password']
+[INFO] 12-09-2025 16:18:26 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 12-09-2025 16:18:30 [main] LogUtils - Click on element By.xpath: //span[normalize-space()='Admin']
+[INFO] 12-09-2025 16:18:31 [main] LogUtils - Click on element By.xpath: //span[contains(@class,'topbar') and normalize-space()='Job']
+[INFO] 12-09-2025 16:18:32 [main] LogUtils - Click on element By.xpath: //a[contains(@class,'tab-link') and normalize-space()='Job Titles']
+[INFO] 12-09-2025 16:18:33 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Add']
+[INFO] 12-09-2025 16:18:35 [main] LogUtils - Set text AA Engineer 6 on element By.xpath: //label[text()='Job Title']/parent::div/following-sibling::div/input
+[INFO] 12-09-2025 16:18:35 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Save']
+[INFO] 12-09-2025 16:18:36 [main] LogUtils - Click on element By.xpath: //span[contains(@class,'topbar') and normalize-space()='Job']
+[INFO] 12-09-2025 16:18:37 [main] LogUtils - Click on element By.xpath: //a[contains(@class,'tab-link') and normalize-space()='Job Titles']
+[INFO] 12-09-2025 16:18:41 [main] LogUtils - Hover mouse on element AA Engineer 6
+[INFO] 12-09-2025 16:18:41 [main] LogUtils - Index of job title: 1
+[INFO] 12-09-2025 16:18:41 [main] LogUtils - Click edit button for job title at index: 1
+[INFO] 12-09-2025 16:18:43 [main] LogUtils - Clear text on element By.xpath: //label[text()='Job Title']/parent::div/following-sibling::div/input
+[INFO] 12-09-2025 16:18:44 [main] LogUtils - Set text AA Engineer 8 on element By.xpath: //label[text()='Job Title']/parent::div/following-sibling::div/input
+[INFO] 12-09-2025 16:18:44 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Save']
+[INFO] 12-09-2025 16:18:46 [main] LogUtils - Verify Success
+Successfully Updated
+× is displayed
+[INFO] 12-09-2025 16:18:52 [main] LogUtils - Hover mouse on element AA Engineer 8
+[INFO] 12-09-2025 16:18:54 [main] LogUtils - Verify AA Engineer 8 is displayed
+[INFO] 12-09-2025 16:18:54 [main] LogUtils - ✅ Test case: testEditJobTitle is passed.
+[INFO] 12-09-2025 16:18:55 [main] LogUtils - Test case: testDeleteJobTitle is starting...
+[INFO] 12-09-2025 16:18:59 [main] LogUtils - 🌐 Open URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+[INFO] 12-09-2025 16:19:00 [main] LogUtils - Set text Admin on element By.xpath: //input[@placeholder='Username']
+[INFO] 12-09-2025 16:19:00 [main] LogUtils - Set text admin123 on element By.xpath: //input[@placeholder='Password']
+[INFO] 12-09-2025 16:19:01 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Login']
+[INFO] 12-09-2025 16:19:04 [main] LogUtils - Click on element By.xpath: //span[normalize-space()='Admin']
+[INFO] 12-09-2025 16:19:05 [main] LogUtils - Click on element By.xpath: //span[contains(@class,'topbar') and normalize-space()='Job']
+[INFO] 12-09-2025 16:19:07 [main] LogUtils - Click on element By.xpath: //a[contains(@class,'tab-link') and normalize-space()='Job Titles']
+[INFO] 12-09-2025 16:19:09 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Add']
+[INFO] 12-09-2025 16:19:10 [main] LogUtils - Set text BA Engineer 4 on element By.xpath: //label[text()='Job Title']/parent::div/following-sibling::div/input
+[INFO] 12-09-2025 16:19:10 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Save']
+[INFO] 12-09-2025 16:19:11 [main] LogUtils - Click on element By.xpath: //span[contains(@class,'topbar') and normalize-space()='Job']
+[INFO] 12-09-2025 16:19:13 [main] LogUtils - Click on element By.xpath: //a[contains(@class,'tab-link') and normalize-space()='Job Titles']
+[INFO] 12-09-2025 16:19:16 [main] LogUtils - Total job titles found: 45
+[INFO] 12-09-2025 16:19:16 [main] LogUtils - Hover mouse on element BA Engineer 4
+[INFO] 12-09-2025 16:19:16 [main] LogUtils - Index of job title: 6
+[INFO] 12-09-2025 16:19:16 [main] LogUtils - Click delete button for job title at index: 6
+[INFO] 12-09-2025 16:19:18 [main] LogUtils - Click on element By.xpath: //button[normalize-space()='Yes, Delete']
+[INFO] 12-09-2025 16:19:18 [main] LogUtils - Verify Success
+Successfully Deleted
+× is displayed
+[INFO] 12-09-2025 16:19:22 [main] LogUtils - Verify BA Engineer 4 is not displayed
+[INFO] 12-09-2025 16:19:23 [main] LogUtils - ✅ Test case: testDeleteJobTitle is passed.
+[INFO] 12-09-2025 16:19:23 [main] LogUtils - ********** RUN FINISHED **********
+[INFO] 12-09-2025 16:19:23 [main] LogUtils - 📊 Test Summary:
+[INFO] 12-09-2025 16:19:23 [main] LogUtils - ✅ Total TCs: 3
+[INFO] 12-09-2025 16:19:23 [main] LogUtils - ✅ Passed TCs: 3
+[INFO] 12-09-2025 16:19:23 [main] LogUtils - ❌ Failed TCs: 0
+[INFO] 12-09-2025 16:19:23 [main] LogUtils - ⚠ Skipped TCs: 0

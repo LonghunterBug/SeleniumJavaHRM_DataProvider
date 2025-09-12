@@ -2,6 +2,7 @@ package com.longtester.keywords;
 
 import com.longtester.driver.DriverManager;
 import com.longtester.helpers.PropertiesHelper;
+import com.longtester.utils.LogUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -30,7 +31,7 @@ public class WebUI {
     }
 
     public static void logConsole(Object message) {
-        System.out.println(message);
+        LogUtils.info(message);
     }
 
     public static void openURL(String url) {

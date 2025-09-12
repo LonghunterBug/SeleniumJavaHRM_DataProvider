@@ -56,8 +56,6 @@ public class EmailSender {
             message.setContent(multipart);
 
             Transport.send(message);
-
-            System.out.println("📧 Email đã gửi thành công kèm tất cả screenshot!");
         } catch (Exception e) {
             e.printStackTrace();
         }
